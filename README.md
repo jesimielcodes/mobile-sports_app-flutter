@@ -1,16 +1,112 @@
-# project1
+# Sports App (Flutter)
 
-A new Flutter project.
+A mobile application built with Flutter that helps users follow sports activities, view match updates, and engage with team communities. The project is structured for scalability and integrates clean navigation, modular widgets, and clear separation between UI and data layers.
 
-## Getting Started
+## ✨ Core Features
 
-This project is a starting point for a Flutter application.
+- 🔐 **Authentication**
+  - Email/password login
+  - Google sign-in
+  - Persistent login after app restart
 
-A few resources to get you started if this is your first Flutter project:
+- 🏠 **Bulletin (Home Feed)**
+  - News and announcements
+  - Dynamic posts pulled from backend
+  - Support for images and text content
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🏟️ **Arena**
+  - Upcoming fixtures
+  - Match details and results
+  - Future support for live scores and statistics
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 💬 **Locker Rooms**
+  - Team-based discussion spaces
+  - Community conversations
+  - Future media sharing support
+
+- 👤 **Profile**
+  - Edit user details
+  - View activity
+  - Logout and preferences
+
+- 🔧 **Future Placeholder Tab**
+  - Reserved for upcoming features (notifications, analytics, marketplace, etc.)
+
+---
+
+## 🏛️ Architecture Overview
+
+The app follows a layered structure:
+
+- **Presentation Layer** – UI, widgets, navigation  
+- **Domain Layer** – models and business rules  
+- **Data Layer** – repositories and data sources
+
+Recommended state management: **Provider or Riverpod**.
+
+---
+
+## 📂 Project Structure (Simplified)
+
+```
+lib/
+ ├── components/
+ ├── pages/
+ ├── models/
+ ├── services/
+ └── main.dart
+```
+
+Reusable widgets live in `components/`, while screens are placed inside `pages/`.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Flutter installed
+- Dart SDK
+- Android Studio or VS Code
+
+### Run the project
+
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+## 🔌 Backend (Planned / In Progress)
+
+Planned integrations:
+
+- Firebase Authentication
+- Firestore Database
+- Firebase Storage (for images)
+
+Repositories will abstract all backend calls instead of calling Firebase directly from UI.
+
+---
+
+## 🎯 Roadmap
+
+- Live match updates
+- Push notifications
+- Admin dashboard
+- UI/UX polish
+- Performance tuning
+
+---
+
+## 🤝 Contributions
+
+This project is evolving. Suggestions and contributions are welcome.
+
+---
+
+## 📜 License
+
+To be decided (MIT recommended).
+
