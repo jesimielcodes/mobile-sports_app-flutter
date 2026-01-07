@@ -1,147 +1,216 @@
-HIGH-LEVEL NAVIGATION
-1. Authentication Flow
-Login / Register screen
-Toggle between Login and Register
-Google authentication option
-On success → navigate to Home
-MAIN SHELL (after login)
-Bottom Navigation (5 tabs)
-Home (Bulletin)
-Arena
-Locker Rooms
-Profile
-TBD (future feature placeholder — ideas later)
-Each tab is independent and preserves scroll state when switching.
-1️⃣ HOME — “Bulletin”
-AppBar
-Title: Bulletin
-Hamburger icon → opens Drawer
-Drawer lists all sports
-Selecting a sport changes context globally (or navigates into that sport section without going “back”)
-Search Bar
-Search matches, teams, players, posts
-Sports Buttons / Grid (NOT filters anymore)
+# Authentication Flow
+
+## Login / Register Screen
+- Toggle between **Login** and **Register**
+- **Google authentication** option  
+- On success → **navigate to Home**
+
+---
+
+# Main Shell (After Login)
+
+## Bottom Navigation (5 Tabs)
+1. **Home (Bulletin)**
+2. **Arena**
+3. **Locker Rooms**
+4. **Profile**
+5. **TBD (Future Feature Placeholder)**
+
+> Each tab is independent and preserves scroll state when switching.
+
+---
+
+## 1️⃣ Home — Bulletin
+
+### AppBar
+- Title: **Bulletin**
+- Hamburger icon → opens **Drawer**
+
+Drawer lists all sports.  
+Selecting a sport either:
+- Changes global context, or
+- Navigates into that sport (without “back” navigation).
+
+### Search Bar
+- Search matches, teams, players, posts
+
+### Sports Grid (Not Filters)
 Each card = a sport (Football, Basketball, Volleyball, etc.)
-Tapping opens Sport Overview Section
-Description
-Featured teams
-Upcoming matches for that sport
-Recent results
-Quick links to teams, arenas, standings
-Recent Matches (horizontal sliding cards)
-Cards show:
-Team A logo vs Team B logo
-Final score
-Date / Venue
-Tap → Match Details (Arena)
-Upcoming Matches (horizontal sliding cards)
-Same UI, but NO score
-Tap → Match Details (Arena)
-Trending Section
-Mixed content feed:
-Instagram posts from players
-LinkedIn / blog articles
-School sports announcements
-National sports headlines relevant to campus
-Ideally normalized into one card style
-Each opens external link or internal article viewer
-Yes — technically possible, but requires APIs, scraping rules, and permissions. We can discuss integration strategies later.
-2️⃣ SPORT OVERVIEW SECTION (when user taps a sport)
-Think of this as your “Teams Panel” from the Java app — but richer.
-Content:
-Hero banner for the sport
-Short description / history at the school
-Tabs:
-Teams
-Fixtures
-Results
-Standings
-News
-Teams Tab
-List of teams for that sport
-Tap a team → Team Page
-3️⃣ TEAM PAGE
-Content:
-Team logo + name + coach + bio
-Stats (wins, losses, ranking)
-Upcoming and past matches for that team
-Access to chatroom
-Roster (players)
-Player Buttons (Bottom section)
-Horizontal list or grid
-Tap → Player Page
-4️⃣ PLAYER PAGE
-Content:
-Profile photo
-Position
-Jersey number
-Biography
-Match stats
-Achievements
-Social links
-Maybe highlight clips (optional later)
-5️⃣ ARENA TAB (Match + Leagues + History)
-This is also the same page users land on when they click any match card.
-Match Details Page
-Team A vs Team B
-Date, venue, time
-Lineups
-Live score (optional later)
-Commentary or recap
-Photos
-Share button
-Leagues Section
-List of leagues (e.g., Inter-hall, Inter-class, Faculty leagues)
-Each league has:
-Fixtures
-Standings
-Rules
-Past winners
-Past Winners
-Year-by-year champions
-Trophy display layout
-Ability to drill into specific year and see tournament details
-6️⃣ LOCKER ROOMS TAB (Fan communities)
-Structure
-Sports tabs
-Each sport → list of available chat rooms
-Example: “Men’s Football Team Fans”
-Example: “Volleyball Community”
-Real-time chat (Firebase likely)
-Moderate content controls later
-7️⃣ PROFILE TAB
-User profile (name, avatar, email)
-Favorite sports, teams, players
-Notifications preferences
-Manage Google account link/logout
-8️⃣ DRAWER (Side navigation)
-Accessible from Home (and possibly globally if you choose).
-Contains:
-Quick switch between sports
-Shortcuts:
-Home
-Arena
-Locker Rooms
-Profile
-Help / About
-Settings
-Sign out
-THE MISSING 5TH TAB — OPTIONS
-Here are some strong candidates:
-Stats & Insights
-Leaderboards
-Top scorers
-MVPs
-Records
-Events
-Sports calendar
-Register for events
-RSVP
-Media
-Photos
-Highlights
-Replays
-Shop / Merchandise
-Jerseys
-Tickets
-Event passes
+
+Tap → **Sport Overview Section**
+
+Contents:
+- Description
+- Featured teams
+- Upcoming matches
+- Recent results
+- Quick links (teams, arenas, standings)
+
+### Recent Matches (Horizontal Cards)
+Each card shows:
+- Team A logo vs Team B logo  
+- Final score  
+- Date / Venue  
+Tap → **Match Details (Arena)**
+
+### Upcoming Matches (Horizontal Cards)
+Same UI, but **no score**  
+Tap → **Match Details (Arena)**
+
+### Trending Section
+Mixed feed:
+- Instagram posts
+- LinkedIn/blog articles
+- School announcements
+- National sports news relevant to campus
+
+Opens:
+- External link OR
+- Internal viewer
+
+> Integration requires APIs, permissions, scraping rules — to be discussed later.
+
+---
+
+## 2️⃣ Sport Overview Section
+(When user taps a sport)
+
+Think of this as an upgraded “Teams Panel”.
+
+### Content
+- Hero banner
+- Short description / history
+- Tabs:
+  - **Teams**
+  - **Fixtures**
+  - **Results**
+  - **Standings**
+  - **News**
+
+### Teams Tab
+- List of teams
+- Tap → **Team Page**
+
+---
+
+## 3️⃣ Team Page
+
+### Content
+- Team logo + name + coach + bio
+- Stats: wins, losses, ranking
+- Upcoming + past matches
+- Access to chatroom
+- Roster (players)
+
+Player section:
+- Horizontal list / grid
+- Tap → **Player Page**
+
+---
+
+## 4️⃣ Player Page
+
+### Content
+- Profile photo  
+- Position  
+- Jersey number  
+- Biography  
+- Match stats  
+- Achievements  
+- Social links  
+- Optional highlight clips
+
+---
+
+## 5️⃣ Arena Tab (Matches + Leagues + History)
+
+Also the landing page when a user taps any match card.
+
+### Match Details Page
+- Team A vs Team B
+- Date, venue, time
+- Lineups
+- Live score (optional)
+- Commentary / recap
+- Photos
+- Share button
+
+### Leagues Section
+For each league:
+- Fixtures
+- Standings
+- Rules
+- Past winners
+
+#### Past Winners
+- Year-by-year champions
+- Trophy display layout
+- Drill into a year → tournament details
+
+---
+
+## 6️⃣ Locker Rooms (Fan Communities)
+
+### Structure
+- Sports list
+- Each sport → chat rooms such as:
+  - Men’s Football Fans
+  - Volleyball Community
+
+Features:
+- Real-time chat (likely Firebase)
+- Moderation tools (later)
+
+---
+
+## 7️⃣ Profile Tab
+
+- Name, avatar, email
+- Favorite sports / teams / players
+- Notification preferences
+- Manage Google account
+- Logout
+
+---
+
+## 8️⃣ Drawer (Side Navigation)
+
+Accessible from Home (and maybe globally).
+
+Contents:
+- Home
+- Arena
+- Locker Rooms
+- Profile
+- Help / About
+- Settings
+- Sign out
+
+Plus:
+- Quick sport switching
+
+---
+
+## Missing 5th Tab — Options
+
+Possible candidates:
+
+### Stats & Insights
+- Leaderboards
+- Top scorers
+- MVPs
+- Records
+
+### Events
+- Sports calendar
+- Register / RSVP
+
+### Media
+- Photos
+- Highlights
+- Replays
+
+### Shop / Merchandise
+- Jerseys
+- Tickets
+- Event passes
