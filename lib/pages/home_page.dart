@@ -14,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int selectedIndex = 2;
+
   final List<Widget> widgetoptions = <Widget>[
     PlaceholderPage(),
     LockerRoomPage(),
@@ -31,8 +32,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Bulletin')),
-      //body:,
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        foregroundColor: Colors.white,
+        title: Text("PlayBook"),
+        centerTitle: true,
+      ),
+      body: widgetoptions.elementAt(selectedIndex),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: Container(
@@ -75,6 +81,8 @@ class _HomePageState extends State<HomePage> {
                   label: 'Profile',
                 ),
               ],
+              currentIndex: selectedIndex,
+              onTap: _onItemTapped,
             ),
           ),
         ),
